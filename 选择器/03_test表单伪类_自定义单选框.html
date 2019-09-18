@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span {
+            float: left;
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            /* position: relative; */
+            overflow: hidden;
+            border-radius: 50%;
+
+        }
+        input{
+            position: absolute;
+            top: -50px;
+        }
+        input:checked + span{
+            background-color: tan;
+        }
+    </style>
+</head>
+
+<body>
+    <label>
+        <input type="radio" name="1">
+        <span></span>
+    </label>
+    <label>
+        <input type="radio" name="1">
+        <span></span>
+    </label>
+    <label>
+        <input type="radio" name="1">
+        <span></span>
+    </label>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        直接兄弟选择器： +          ：选择紧跟在当前的兄弟
+        通用兄弟选择器： ~          ： 选择当前元素之后的所有兄弟
+            上面选择器都是只对后面的兄弟（不包括后代）起作用
+     -->
+    <style>
+        
+        ul>li:nth-child(2){
+            color: red;
+        }
+
+        ul>li:nth-child(2) + li{
+            color: teal;
+        }
+
+        ul>li:nth-child(2) ~ li{
+            color: saddlebrown;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1li</li>
+        <li name='liOne'>2li</li>
+        <div>div</div>
+        <li>3li</li>
+        <li>4li</li>
+        <li>5li</li>
+        <li>6li</li>
+    </ul>
+</body>
+</html>

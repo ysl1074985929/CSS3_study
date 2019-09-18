@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+
+        子串值属性选择器
+
+        这种情况的属性选择器也被称为“伪正则选择器” (不是真正的正则表达式）：
+
+        [attr|=val] : 选择attr属性的值是 'val' 或值以 'val-' 开头的元素 
+                        
+        [attr^=val] : 选择attr属性的值以 val 开头（包括 val）的元素。
+        [attr$=val] : 选择attr属性的值以 val 结尾（包括 val）的元素。
+        [attr*=val] : 选择attr属性的值中包含子字符串 val 的元素
+                    （一个子字符串就是一个字符串的一部分而已，例如，”cat“ 是 字符串 ”caterpillar“ 的子字符串）。
+
+     -->
+
+    <style>
+        /* [attr|=val] : 选择attr属性的值是 'val' 或值以 'val-' 开头的元素       */
+        li[name |=li] {
+            color: red;
+        }
+
+        /* [attr^=val] : 选择attr属性的值以 val 开头（包括 val）的元素。 */
+        li[name ^=li] {
+            background-color: thistle;
+        }
+
+        /* [attr$=val] : 选择attr属性的值以 val 结尾（包括 val）的元素。 */
+        li[name $=li] {
+            font-size: 33px;
+        }
+
+        /* [attr*=val] : 选择attr属性的值中包含子字符串 val 的元素 */
+        li[name *=li] {
+            border: 1px solid;
+        }
+
+
+        p~div {
+            width: 100px;
+            height: 100px;
+            background-color: teal;
+            text-align: center;
+            font: 25px/100px bolder;
+            display: none;
+        }
+
+        :target {
+            display: block;
+        }
+        .outer{
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul>
+        <li name='li'>1li</li>
+        <li name='li-One'>2li</li>
+        <div name='li'>div</div>
+        <li name='onelitwo'>3li</li>
+        <li name='two'>4li</li>
+        <li name='two one li'>5li</li>
+        <li name='litwo'>6li</li>
+    </ul>
+
+    <div class="outer">
+        <p>使用css做选项卡</p>
+        <a href="#div1">div1</a>
+        <a href="#div2">div2</a>
+        <a href="#div3">div3</a>
+        <div id="div1">div1</div>
+        <div id="div2">div2</div>
+        <div id="div3">div3</div>
+    </div>
+
+</body>
+
+</html>

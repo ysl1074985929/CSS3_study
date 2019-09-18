@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+
+        nth-child 和 nth-of-type 区别：
+            nth-of-type 以元素为中心
+
+                eg:     
+                
+                    #wrap .inner:nth-of-type(1) 找的是 #wrap 底下各类元素 的class为inner 的第一个元素
+
+                    #wrap .inner:nth-child(1)   找的是 #wrap 的第一个子元素 该元素的class必须为inner
+     -->
+    <style>
+        /*
+        ul li:nth-child(2)  
+        表示： ul 的第二个子元素 且该元素必须为 li  
+         */
+
+         /* 
+            ul>li:nth-of-type(1)
+        表示： ul底下 的第一个li元素  
+          */
+
+
+    
+    ul>li:nth-child(1){
+        background-color: teal;
+    }
+
+    ul>li:nth-of-type(1){
+        background-color: rgb(25, 161, 82);
+    }
+
+    #wrap .inner:nth-of-type(1){
+        background-color: tomato;
+    }
+    #wrap .inner:nth-child(1){
+        border: 3px solid;
+    }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <p>p</p>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+
+    <div id="wrap">
+        <div class="">div</div>
+        <span class="inner">span</span>
+        <p class="inner">p</p>
+        <h1 class="inner">h1</h1>
+        <h2 class="inner">h2</h2>
+    </div>
+</body>
+</html>

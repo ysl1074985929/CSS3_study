@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        [attr]：该选择器选择包含 attr 属性的所有元素，不论 attr 的值为何。
+        [attr=val]：该选择器仅选择 attr 属性被赋值为 val 的所有元素。
+        [attr~=val]：该选择器仅选择具有 attr 属性的元素，而且要求 val 值是 attr 值包含的被空格分隔的取值列表里中的一个。
+     -->
+
+     <style>
+     
+         /* [attr]：该选择器选择包含 attr 属性的所有元素，不论 attr 的值为何。        */
+        ul>li[name]{
+            color: tomato;
+        }
+
+        /* [attr=val]：该选择器仅选择 attr 属性被赋值为 val 的所有元素。 */
+        ul>li[name='two']{
+            background-color: steelblue;
+        }
+        
+        /* [attr~=val]：该选择器仅选择具有 attr 属性的元素，而且要求 val 值是 attr 值包含的被空格分隔的取值列表里中的一个。 */
+        ul>li[name~='two']{
+            font-size: 33px;
+        }
+     
+     </style>
+</head>
+
+<body>
+    <ul>
+        <li>1li</li>
+        <li name='liOne'>2li</li>
+        <div>div</div>
+        <li name>3li</li>
+        <li name='two'>4li</li>
+        <li name='two one li'>5li</li>
+        <li>6li</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .outer{
+        height: 200px;
+        width: 200px;
+        border: 1px solid;
+        margin: 0 auto;
+        /* 溢出显示省略号(三+1个条件) */
+        /* 换行无效 */
+        white-space: nowrap;
+        overflow: hidden;
+        /* 省略号 */
+        text-overflow: ellipsis;
+        /* 所包裹的区域不能让子元素撑开  也就是必须制定长宽 */
+    }
+
+    </style>
+</head>
+<body>
+    <div class="outer">
+        是的发送到发送到
+        是的发送到发送到
+        是的发送到发送到
+        是的发送到发送到
+        是的发送到发送到
+        是的发送到发送到
+        是的发送到发送到
+        是的发送到发送到
+    </div>
+</body>
+</html>
