@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+
+        设置圆角的时候最好使用的是具体数值，因为老的移动端(安卓4等)不支持百分比
+
+        圆角可以理解为在中间画一个圆/椭圆， 然后将其向四个方向怼
+     -->
+     <style>
+     
+        .outer{
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin:  auto;
+            background-color: thistle;
+        }
+        .circle{
+            width: 100px;
+            height: 100px;
+            background-color: steelblue;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            border-radius: 50px;
+            text-align: center;
+            line-height: 100px;
+        }
+        .likeCircle{
+            width: 150px;
+            height: 100px;
+            background-color: slategrey;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -150px;
+            margin-top: -50px;
+            /* 第一个值为横半径  第二个值为竖半径 */
+            border-radius: 75px/50px;
+            text-align: center;
+            line-height: 100px;
+        }
+
+
+     </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="circle">圆</div>
+        <div class="likeCircle">椭圆</div>
+    </div>
+
+</body>
+
+</html>

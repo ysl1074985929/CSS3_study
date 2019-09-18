@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        开启定位会提升一层， 
+            因为浮动只会提升半层,因此最上方位置显示的是开启定位的元素 (div2)
+            div2 的文字还是被div1的文字挡住
+            div3 整个跑到div2 的位置但是 div2 的文字还是在会覆盖div3
+     -->
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .box1 {
+            background-color: teal;
+            float: left;
+            /* opacity: 0; */
+            /* display: none; */
+        }
+
+        .box2 {
+            background-color:antiquewhite;
+            position: relative;
+            color: red;
+        }
+
+        .box3 {
+            background-color: tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    
+</body>
+
+</html>

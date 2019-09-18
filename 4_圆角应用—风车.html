@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html,body{
+            height: 100%;
+            overflow: hidden;
+        }
+        .outer{
+            width: 500px;
+            height: 500px;
+            background-color: thistle;
+            border: 1px solid;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transition: 2s;
+        }
+        .outer > div{
+            margin: 10px;
+            width: 230px;
+            height: 230px;
+            background-color: tan;
+            border: 1px solid;
+            box-sizing: border-box;
+            float: left;
+        }
+        .outer > div:nth-child(1),
+        .outer > div:nth-child(4)
+        {
+            border-radius: 0px 115px;
+
+        }
+        .outer > div:nth-child(2),
+        .outer > div:nth-child(3)
+        {
+            border-radius:115px 0px ;
+
+        }
+
+        .outer:hover{
+            transform: rotate(120deg);
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
