@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+        .box{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            text-align: center;
+            line-height: 200px;
+            border: 50px solid;
+            border-image-source: url(img/旺仔.jpg);
+            /* fill 可以控制中间的图片显示显示 */
+            /* border-image-slice: 30% fill; */
+            border-image-slice: 30%;
+            border-image-width: 100px;
+            border-image-outset: 20px;
+            border-image-repeat: round;
+            background-color: slateblue;
+        }
+        img{
+            width: 500px;
+            border: 1px solid;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="box">
+        这是一个旺仔边框
+    </div>
+    <img src="./img/旺仔.jpg" alt="旺仔">
+</body>
+</html>
