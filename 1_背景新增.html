@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        控制背景图片的大小 background-size 初始为 auto 
+        控制背景图片的剪裁位置 background-clip  初始为 padding-box
+        控制背景图片的平铺位置 background-origin    初始为
+     -->
+    <style>
+        .box {
+            background: url(img/573424f305edd.jpg) no-repeat;
+            width: 1000px;
+            height: 500px;
+            border: 100px dotted rgba(0, 0, 0, .5);
+            background-size: 100% 100%;
+            padding: 50px;
+            background-clip:content-box;
+            text-align: center;
+            
+            font: bolder 100px/5 '楷体';
+            color: rgba(0, 0, 0, .3);
+            /*  
+                -webkit-background-clip 可以指定text 为文字设置背景
+            */
+            -webkit-background-clip: text;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        文字背景图
+    </div>
+</body>
+
+</html>
