@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>利用绝对定位模仿固定定位</title>
+    <!-- 
+
+        开启了绝对定位的元素是相对于其最近的一个开启了定位的父元素，若没有则以初始包含块为准，
+            1.滚动条默认是在初始包含块上的
+            2.令滚动条在body上： 为html 和 body都设置overflow
+                注意滚动条不可能在html上
+
+                问题：固定定位在es6上不行
+                        可以利用该条原理： 利用绝对定位模仿固定定位
+     -->
+     <style>
+     
+        html,body{
+            width: 100%;
+            height: 100%;
+            /* 为方便把滚动条设置给outer */
+            overflow: hidden;
+        }
+        .outer{
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+        }
+        .test{
+            height: 3000px;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+     </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="test"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>
