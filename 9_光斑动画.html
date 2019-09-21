@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    html,body{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: black;
+    }
+
+    h1{
+        display: inline-block;
+        margin: 100px;
+        font:bolder 100px 微软雅黑;
+        /* transition: 3s; */
+        color: rgba(0, 0, 0, .3);
+        background: no-repeat;
+        background-image: linear-gradient(135deg, rgba(255,255,255,0) 100px,rgba(255,255,255,1) 150px,rgba(255,255,255,0) 200px);
+        background-position: -150px 0;
+        -webkit-background-clip: text;
+    }
+    /* h1:hover{
+
+        background-position: 900px 0;
+            }; */
+    
+    </style>
+    <script>
+    
+    window.onload = function(){
+
+        h1Move();
+
+        function h1Move () {
+            var h1 = document.getElementsByTagName('h1')[0];
+            setInterval(move, 30);
+            var flag = -150;
+            function move (){
+                flag += 10;
+                if(flag==900){
+                    flag = -150;
+                }
+                h1.style.backgroundPositionX = flag + "px";
+            }
+
+        }
+
+    }
+    
+    </script>
+</head>
+<body>
+    <h1>~~~~光斑动画~~~~</h1>
+</body>
+</html>
