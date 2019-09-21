@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        线性渐变 是背景图片中的一个属性
+     -->
+    <style>
+        *{
+            padding: 0;margin: 0;
+        }
+        .box {
+            width: 600px;
+            height: 400px;
+            background-image: linear-gradient(180deg, #5cb3cc 50px, #c6e6e8 350px, #fb9968 400px);
+        }
+
+        .box2 {
+            width: 600px;
+            height: 400px;
+            background-image: repeating-linear-gradient(45deg, #1a6840 0px, white 70px, #20a162 100px);
+            position: absolute;
+            right: 20px;
+            top: 0px;
+        }
+
+        .box3 {
+            width: 600px;
+            height: 400px;
+            background-image: repeating-linear-gradient(45deg, #1a6840 0px, white 70px, #20a162 100px);
+            position: absolute;
+            right: 44.5px;
+            top: 400px;
+            transition-duration: 2s;
+
+        }
+        .box3:hover{
+            width: 700px;
+            height: 400px;
+            background-image: repeating-linear-gradient(45deg, #1a6840 50px, white 120px, #20a162 150px);
+            position: absolute;
+            right: 44.5px;
+            top: 400px;      
+        }
+    </style>
+    <!-- <script>
+    window.onload = function(){
+        var timer = setInterval(move, 1000);
+
+        function　move (){
+            var box3 = document.querySelector('.box3');
+            // var num = window.getComputedStyle(box3, null).getPropertyValue('background-image');
+            // console.log(num);
+            box3.style.backgroundImage = 'repeating-linear-gradient(45deg, #1a6840 50px, white 120px, #20a162 150px)';
+        }
+    }
+    </script> -->
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+    <div class="box2">
+
+    </div>
+    <div class="box3"></div>
+</body>
+
+</html>
