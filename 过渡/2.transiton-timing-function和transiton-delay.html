@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        transition-timing-function 控制的是 过渡的速度是匀速还是加速的 
+            linear匀速 
+            ease 先加速再减速
+            ease-in 加速
+            ease-out 减速
+            ease-in-out 先加速再减速效果明显点
+            cubic-bezier 贝赛尔曲线可以自己控制速度的变换快慢等
+
+        transition-delay 延迟
+
+
+        注意：有关过渡的属性都是重复列表的
+                如   transition-property: width, height, background-color;
+                     transition-duration: 5s, 10s;
+                     transition-timing-function: linear;
+                     transition-delay: 2s, 0s;
+        中 transition-duration 和 transition-delay 以及 transition-timing-function 都是按照列表重复属性，
+        以duration为例： property中有三个值，所以duration应该也有是三个，但是上述只有两个，因此会自动重复 5s, 10s,5s, 10s,5s, 10s,5s, 10s。。。。
+
+        坑： 过渡中的时间的单位不能漏写，漏写会出错，
+            transition-timing-function 的默认值是 ease
+     -->
+
+    <style>
+    
+    .box{
+        width: 100px;
+        height: 100px;
+        background-color: thistle;
+        transition-property: width, height, background-color;
+        transition-duration: 5s, 10s, 1s;
+        transition-timing-function: linear;
+        transition-delay: 2s, 0s;
+    }
+
+    .box:hover{
+        width: 500px;
+        height: 500px;
+        background-color: steelblue;
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
