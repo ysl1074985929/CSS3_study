@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        transition在首次渲染结束之前是不会被触发的
+
+         eg: 有无window.onload
+     -->
+     <style>
+     
+     .box{
+         width: 100px;
+         height: 100px;
+         background-color: thistle;
+         transition-duration: 2s;
+     }
+     
+     </style>
+     <script>
+        //  var box = document.querySelector('.box');
+        //     box.style.width = '300px';
+        
+
+         window.onload = function(){
+            var box = document.querySelector('.box');
+            box.style.width = '300px';
+         }
+     
+        
+     
+     </script>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
