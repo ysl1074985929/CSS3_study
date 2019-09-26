@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        景深越大 变换越小 灭点越远
+        景深越小 变换越大 灭点越近
+
+            presepective-origin 景深基点，控制视觉位置
+
+        注意：有两种方式设置景深，另一种为    transform: perspective(100px); 
+            设置在本体上 perspective(100px)必须在transform首，否则无效
+            但是通常使用perspective直接设置
+     -->
+    <style>
+    
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    html,body{
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .outer{
+        width: 500px;
+        height: 500px;
+        border: 1px solid black;
+        perspective: 100px;
+        perspective-origin: right;
+    }
+
+    .outer > .inner{
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        
+        text-align: center;
+        font: 40px/200px '微软雅黑';
+        background-color: skyblue;
+        transform: rotate3d(1, 0, 0, -30deg);
+    }
+    .outer,
+    .outer > .inner{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+    }
+
+
+    
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">
+            司法考试
+        </div>
+    </div>
+</body>
+</html>
