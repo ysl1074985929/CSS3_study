@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        使用3D时需给舞台设置  景深
+        舞台： 一般是其父元素
+            3d 有旋转 平移 缩放
+                其中缩放用的比较少
+     -->
+    <style>
+    
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    html,body{
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .outer{
+        width: 500px;
+        height: 500px;
+        border: 1px solid black;
+        perspective: 100px;
+    }
+
+    .outer > .inner{
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        border-radius: 50%;
+        text-align: center;
+        font: 40px/200px '微软雅黑';
+        background-color: skyblue;
+        transition: 1s;
+    }
+    .outer,
+    .outer > .inner{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .outer:hover .inner{
+        transform: rotate3d(0, 1, 0, 180deg) translate3d(0px, 0px, 50px);
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">
+            司法考试
+        </div>
+    </div>
+</body>
+</html>
