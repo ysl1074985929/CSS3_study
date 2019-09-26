@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <!-- 
-        transform 的第二个坑： 该值 变换前后的位置 个数必须一样！！
-     -->
+<!--     
+    坑: 恢复样式的事件只需绑定一次
+        transition的值最好一直都是一样的
+ -->
 
     <style>
         * {
@@ -66,6 +67,25 @@
         var home = document.querySelector('.outer > .home img');
         var img = document.querySelectorAll('.outer > .inner img');
         var flag = true;
+
+        for(var i=0; i<img.length; i++){
+            img[i].onclick = function () {
+                // 点击事件无需延时，因此要重新设置transition
+                this.style.transition = '.3s';
+                this.style.transform = 'rotate(360deg) scale(1.5)';
+                this.style.opacity = '.1';
+                
+                // 绑定样式恢复事件
+                this.addEventListener('transitionend', reback);
+            }
+        } 
+        // 创建一个函数用于点击后恢复原本样式,该事件只需触发一次
+        function reback(){
+            this.style.transition = '.1s';
+            this.style.opacity = '1';
+            this.style.transform = 'rotate(360deg) scale(1)';
+            this.removeEventListener('transitionend', reback);
+        }
         
         home.onclick = function(){
             if(flag){
@@ -74,7 +94,7 @@
                 for(var i = 0; i<img.length; i++){
                     img[i].style.left = -objPosition(150, 90 * i / (img.length-1)).left + 'px';
                     img[i].style.top = -objPosition(150, 90 * i / (img.length-1)).top + 'px';
-                    img[i].style.transform = 'rotate(360deg)';
+                    img[i].style.transform = 'rotate(360deg) scale(1)';
                     img[i].style.transition = '1s ' + i*.1 +'s';
                 }
             }else{
@@ -83,7 +103,7 @@
                 for(var i = 0; i<img.length; i++){
                     img[i].style.left = '0px';
                     img[i].style.top = '0px';
-                    img[i].style.transform = 'rotate(0deg)';
+                    img[i].style.transform = 'rotate(0deg) scale(1)';
                     img[i].style.transition = '1s ' + (img.length-i)*.1 +'s';
                 }
             }
