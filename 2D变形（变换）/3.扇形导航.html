@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .outer{
+            width: 500px;
+            height: 300px;
+            border: 1px solid;
+            margin: 100px auto;
+            position: relative;
+        } 
+
+        .outer > .inner{
+            width: 42px;
+            height: 42px;
+        }
+
+        .outer > .inner,
+        .outer > .home img{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .outer > .inner img,
+        .outer > .home img{
+            border-radius: 50%;     
+        }
+
+    
+        .outer > .home img{
+            transition: 1s;
+        }
+        .outer > .inner img{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        
+        
+    </style>
+    <script>
+    
+    window.onload = function(){
+
+        var home = document.querySelector('.outer > .home img');
+        var img = document.querySelectorAll('.outer > .inner img');
+        var flag = true;
+        
+        home.onclick = function(){
+            if(flag){
+                //展开
+                this.style.transform = 'rotate(720deg)';
+                for(var i = 0; i<img.length; i++){
+                    img[i].style.left = -objPosition(150, 90 * i / (img.length-1)).left + 'px';
+                    img[i].style.top = -objPosition(150, 90 * i / (img.length-1)).top + 'px';
+                    img[i].style.transition = '1s ' + i*.1 +'s';
+                }
+            }else{
+                //回缩
+                this.style.transform = 'rotate(0deg)';
+                for(var i = 0; i<img.length; i++){
+                    img[i].style.left = '0px';
+                    img[i].style.top = '0px';
+                    img[i].style.transition = '1s ' + (img.length-i)*.1 +'s';
+                }
+            }
+            
+            flag = !flag;
+        }
+
+        // 创建一个函数用于计算选项的位置坐标
+        function objPosition(long, deg){
+            var x = Math.round(long * Math.sin(deg * Math.PI/180));
+            var y = Math.round(long * Math.cos(deg * Math.PI/180));
+            return {left : x, top : y};
+        }
+
+    }
+    
+    </script>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner">
+            <img src="../img/clos.png">
+            <img src="../img/full.png">
+            <img src="../img/open.png">
+            <img src="../img/prev.png">
+            <img src="../img/refresh.png">
+        </div>
+        <div class="home">
+            <img src="../img/home.png">
+        </div>
+    </div>
+</body>
+
+</html>
