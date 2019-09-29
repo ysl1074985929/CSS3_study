@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html,body{
+            height: 100%;
+            overflow: hidden;
+        }
+        .wrap {
+            height: 100%;
+            perspective: 500px;
+            /* background-color: teal; */
+        }
+
+        .wrap > .inner{
+            height: 100%;
+            position: relative;
+            text-align: center;
+            transform-style: preserve-3d;
+        }
+        .wrap > .inner > img,
+        .wrap > .inner >p{
+            width: 30%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate3d(-50%, -50%, 0);
+        }
+        .wrap > .inner >p{
+            margin-top: 20%;
+        }
+        .wrap > .inner > img{
+            
+            animation: move 2s linear infinite ;
+        }
+        @keyframes move {
+            from{
+                transform: translate3d(-50%, -50%, 0) rotateY(0deg);
+            }
+            to{
+                transform: translate3d(-50%, -50%, 0) rotateY(360deg);
+            }
+        }
+    
+    </style>
+    <script src="./js/data.js"></script>
+    <!-- 
+        <script type="text/javascript">
+		
+		setLoding()
+		function setLoding(){
+			var logoText = document.querySelector('#loading');
+			var data = [];
+			var nub = 0;
+			for(var s in imgData) {
+				//console.log(imgData[s]);
+				data = data.concat(imgData[s]);
+			}
+			for(var i = 0; i < data.length; i++){
+				var img = new Image();
+				img.src = data[i];
+				img.onload = function(){
+					nub++;
+					//console.log(Math.floor(nub/data.length*100));
+					logoText.innerHTML = "已加载 "+(Math.floor(nub/data.length*100))+"%";
+				};
+			}
+		}
+		
+		
+	</script>
+     -->
+    <script>
+    
+        window.onload = function(){
+
+            var arr = [];
+            var num = 0;
+            var pNode = document.querySelector('.wrap > .inner >p');
+            for (var item in imgData) {
+                arr = arr.concat(imgData[item]);
+            }
+            // console.log(arr);
+            for(var i=0; i<arr.length; i++){
+                var img = new Image();
+                img.src = arr[i];
+                img.onload = function(){
+                    num++;
+                    pNode.innerHTML = "已加载 : "+(Math.round(num/arr.length*100))+"%";
+                }
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="inner">
+            <img src="../../img/旺仔.jpg">
+            <p>正在加载： 0%</p>
+        </div>
+    </div>
+</body>
+</html>
