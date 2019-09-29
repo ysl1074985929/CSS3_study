@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html,body{
+            height: 100%;
+            overflow: hidden;
+        }
+        .wrap{
+            height: 100%;
+            background-color: tan;
+            position: relative;
+        }
+
+        .wrap > .inner{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            white-space: nowrap;
+            font: 20px '微软雅黑';
+            
+        }
+
+        .wrap > .inner > span{
+           /* animation: move .3s linear alternate infinite; */
+           position: relative;
+        }
+
+        @keyframes move {
+            from{
+                top: 0;
+            }
+            to{
+                top: -20px;
+            }
+        }
+    
+    </style>
+
+    <script>
+    
+        window.onload = function(){
+            worldMove();
+        }
+
+        function worldMove () {
+            var spanNode = document.querySelectorAll('.wrap > .inner > span');
+            var colros = ['red', 'orange', 'yellow', 'green', 'blue', 'gray','red', 'orange', 'yellow', 'green', 'blue', 'gray']
+            for (var i = 0; i < spanNode.length; i++){
+                spanNode[i].style.animation = ' move .3s ' + (i*.1) + 's linear alternate infinite';
+                spanNode[i].style.color = colros[i];
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="inner">
+            <span>这</span>
+            <span>是</span>
+            <span>一</span>
+            <span>个</span>
+            <span>漂</span>
+            <span>亮</span>
+            <span>的</span>
+            <span>开</span>
+            <span>机</span>
+            <span>动</span>
+            <span>画</span>
+        </div>
+    </div>
+</body>
+</html>
