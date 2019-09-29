@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新</title>
+    <style>
+    
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        html,body{
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .outer{
+            width: 100px;
+            height: 300px;
+            border: 1px solid;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            
+
+            display: flex;
+            /* flex-direction: row; */
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            /* 
+                flex-wrap 控制侧轴方向
+                    wrap            按侧轴正方向堆叠
+                    wrap-reverse    按侧轴负方向堆叠
+             */
+            /* flex-wrap: wrap-reverse; */
+
+            /* 
+                多行多列时：富裕空间的管理 
+                            会把所有的行列看成一个整体
+             */
+            align-content: flex-end;
+
+            /* 
+                flex-flow 是 flex-direction 和 flex-wrap的缩写
+                    简单理解就是该属性能控制 ：
+                                            1. 那个是主轴  
+                                            2.主轴，侧轴的方向
+             */
+             flex-flow: row  wrap-reverse;
+        }
+        .outer > .item{
+            width: 50px;
+            height: 50px;
+            background-color: thistle;
+            text-align: center;
+            line-height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="outer">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+
+    </div>
+</body>
+</html>
