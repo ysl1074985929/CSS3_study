@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+        .wrap{
+            width: 400px;
+            height: 700px;
+            margin: 10px auto;
+            border: 1px solid;
+        }
+        .wrap > .outer{
+            width: 100%;
+            border: 1px solid;
+            box-sizing: border-box;
+            margin-top: 20%;
+        }
+
+        .wrap > .outer > .inner{
+            text-align: center;
+            display: flex;
+        }
+
+        .wrap > .outer > .inner > .item{
+            flex: 1;
+            text-decoration: none;
+            color: gray;
+        }
+        .wrap > .outer > .inner > .item::before{
+            content: '';
+            display: block;
+            width: 43px;
+            height: 42px;
+            background-color: teal;
+            border-radius: 50%;
+            margin: 10px auto;
+            
+        }
+
+        .wrap > .outer > .inner:nth-child(1) > .item:nth-child(1)::before{
+            background: url(./img/01.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        .wrap > .outer > .inner:nth-child(1) > .item:nth-child(2)::before{
+            background: url(./img/02.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        .wrap > .outer > .inner:nth-child(1) > .item:nth-child(3)::before{
+            background: url(./img/03.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        .wrap > .outer > .inner:nth-child(1) > .item:nth-child(4)::before{
+            background: url(./img/04.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        .wrap > .outer > .inner:nth-child(1) > .item:nth-child(5)::before{
+            background: url(./img/05.png) no-repeat;
+            background-size: 100% 100%;
+        }
+
+
+
+        .wrap > .outer > .inner:nth-child(2) > .item:nth-child(1)::before{
+            background: url(./img/06.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        .wrap > .outer > .inner:nth-child(2) > .item:nth-child(2)::before{
+            background: url(./img/07.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        .wrap > .outer > .inner:nth-child(2) > .item:nth-child(3)::before{
+            background: url(./img/08.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        .wrap > .outer > .inner:nth-child(2) > .item:nth-child(4)::before{
+            background: url(./img/09.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        .wrap > .outer > .inner:nth-child(2) > .item:nth-child(5)::before{
+            background: url(./img/10.png) no-repeat;
+            background-size: 100% 100%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="outer">
+            <div class="inner">
+                <a href="javascript:;" class="item">天猫</a>
+                <a href="javascript:;" class="item">聚划算</a>
+                <a href="javascript:;" class="item">天猫国际</a>
+                <a href="javascript:;" class="item">外卖</a>
+                <a href="javascript:;" class="item">天猫超市</a>
+            </div>
+            <div class="inner">
+                    <a href="javascript:;" class="item">天猫</a>
+                    <a href="javascript:;" class="item">聚划算</a>
+                    <a href="javascript:;" class="item">天猫国际</a>
+                    <a href="javascript:;" class="item">外卖</a>
+                    <a href="javascript:;" class="item">天猫超市</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
