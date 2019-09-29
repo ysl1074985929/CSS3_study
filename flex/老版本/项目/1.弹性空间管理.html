@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>老</title>
+    <style>
+    
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        html,body{
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .outer{
+            width: 500px;
+            height: 300px;
+            border: 1px solid;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+
+
+            display: -webkit-box;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -webkit-box-pack: start;
+            -webkit-box-align: start;
+
+            
+            
+        }
+        .outer > .item{
+            width: 50px;
+            height: 50px;
+            background-color: thistle;
+            text-align: center;
+            line-height: 50px;
+
+            /* 
+                弹性空间管理： 
+                    是指将主轴上的富裕空间按比例分配给项目的 width
+             */
+            -webkit-box-flex: 1;
+        }
+        
+        .outer > .item:nth-child(1){
+            -webkit-box-flex: 4;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="outer">
+
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+
+    </div>
+</body>
+</html>
